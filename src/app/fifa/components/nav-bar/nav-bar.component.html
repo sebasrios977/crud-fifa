@@ -1,0 +1,21 @@
+<nav class="flex justify-content-between">
+  <section class="hidden sm:block">
+    <p-tabMenu styleClass="text-xl" [model]="menuItems" [activeItem]="activeItem"></p-tabMenu>
+  </section>
+
+  <section class="nav-phone block sm:hidden">
+    <p-sidebar [(visible)]="navbarVisible" position="right">
+        <h3 class="nav-phone__title text-2xl">Menu</h3>
+        <ul class="list-group list-group-flush">
+          <li
+            *ngFor="let item of menuItems"
+            [routerLink]="[item.routerLink]"
+            class="nav-phone__item text-xl"
+          >
+            {{item.label}}
+          </li>
+        </ul>
+    </p-sidebar>
+    <p-button (click)="navbarVisible = true" icon="pi pi-align-justify" styleClass="w-4rem h-4rem"></p-button>
+  </section>
+</nav>

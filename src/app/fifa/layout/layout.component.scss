@@ -1,0 +1,12 @@
+
+
+.header{
+
+  &__logo {
+
+    transition: transform .2s ease-in-out;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<section class="create p-5">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="create__form">
+    <h3 class="create__title text-center uppercase mb-6">Ingresa los datos actualizados del equipo</h3>
+    <div class="create__grid">
+      <div class="create__inputs grid col-12 md:col-8 gap-2">
+        <input class="create__input h-3rem" type="text" pInputText formControlName="nombre" placeholder="Nombre"/>
+        <input class="create__input h-3rem" type="text" pInputText formControlName="estadio" placeholder="Estadio"/>
+        <input class="create__input h-3rem" type="text" pInputText formControlName="sitioWeb" placeholder="Sitio Web"/>
+        <input class="create__input h-3rem" type="text" pInputText formControlName="nacionalidad" placeholder="Nacionalidad"/>
+        <input class="create__input h-3rem" type="text" pInputText formControlName="fundacion" placeholder="Fundacion"/>
+        <input class="create__input h-3rem" type="text" pInputText formControlName="entrenador" placeholder="Entrenador"/>
+        <input class="create__input h-3rem" type="number" pInputText formControlName="capacidad" placeholder="Capacidad"/>
+        <input class="create__input h-3rem" type="text" pInputText formControlName="valor" placeholder="Valor"/>
+        <p-button class="create__submit" type="submit" label="ACTUALIZAR"></p-button>
+      </div>
+    </div>
+  </form>
+
+  <div class="create__teams mb-8 card" *ngIf="updatedTeam.length > 0">
+    <h3 class="create__title text-center uppercase mb-6">Clubes Encontrados</h3>
+    <p-table class="create__table" [value]="updatedTeam">
+      <ng-template pTemplate="header">
+          <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Estadio</th>
+              <th>Sitio Web</th>
+              <th>Nacionalidad</th>
+              <th>Fundacion</th>
+              <th>Entrenador</th>
+              <th>Capacidad</th>
+              <th>Valor</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-team>
+          <tr>
+              <td>{{ team.id }}</td>
+              <td>{{ team.nombre }}</td>
+              <td>{{ team.estadio }}</td>
+              <td>{{ team.sitioWeb }}</td>
+              <td>{{ team.nacionalidad }}</td>
+              <td>{{ team.fundacion }}</td>
+              <td>{{ team.entrenador }}</td>
+              <td>{{ team.capacidad }}</td>
+              <td>{{ team.valor }}</td>
+          </tr>
+      </ng-template>
+  </p-table>
+  </div>
+</section>

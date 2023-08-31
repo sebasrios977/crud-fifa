@@ -1,0 +1,50 @@
+<section class="search p-5">
+  <h3 class="search__title text-center uppercase mb-4">Busca un equipo</h3>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form mb-6">
+    <div class="form__grid card flex flex-wrap justify-content-center align-items-start gap-2">
+      <input class="form__input h-3rem" type="number" pInputText formControlName="id" placeholder="Buscar equipo por Id"/>
+      <p-calendar class="form__date-start h-3rem" placeholder="Fecha Inicio" formControlName="dateStart" dateFormat="dd-mm-yy"></p-calendar>
+      <p-calendar class="form__date-end h-3rem" placeholder="Fecha Final" formControlName="dateEnd" dateFormat="dd-mm-yy"></p-calendar>
+      <p-button class="form__submit" type="submit" label="Buscar"></p-button>
+    </div>
+  </form>
+
+  <div class="search__teams mb-8 card" *ngIf="specificTeams.length > 0">
+    <h3 class="search__teams-found text-center uppercase mb-6">Clubes Encontrados</h3>
+    <p-table class="search__table" [value]="specificTeams">
+      <ng-template pTemplate="header">
+          <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Estadio</th>
+              <th>Sitio Web</th>
+              <th>Nacionalidad</th>
+              <th>Fundacion</th>
+              <th>Entrenador</th>
+              <th>Capacidad</th>
+              <th>Valor</th>
+              <th>Eliminar Club</th>
+              <th>Actualizar Club</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-team>
+          <tr>
+              <td>{{ team.id }}</td>
+              <td>{{ team.nombre }}</td>
+              <td>{{ team.estadio }}</td>
+              <td>{{ team.sitioWeb }}</td>
+              <td>{{ team.nacionalidad }}</td>
+              <td>{{ team.fundacion }}</td>
+              <td>{{ team.entrenador }}</td>
+              <td>{{ team.capacidad }}</td>
+              <td>{{ team.valor }}</td>
+              <td>
+                <p-confirmPopup></p-confirmPopup>
+                <p-button (click)="confirm($event, team.id)" icon="pi pi-trash" label="Eliminar"></p-button>
+              </td>
+              <td><button (click)="goToUpdatePage(team.id)" pButton pRipple label="Actualizar" icon="pi pi-check-circle" class="p-button-success"></button></td>
+          </tr>
+      </ng-template>
+  </p-table>
+  </div>
+</section>

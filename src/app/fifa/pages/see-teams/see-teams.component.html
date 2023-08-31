@@ -1,0 +1,40 @@
+<main class="teams p-5">
+  <div class="teams__table card">
+    <h3 class="teams__title text-center uppercase mb-6">Todos los clubes</h3>
+    <p-table [value]="teams">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Estadio</th>
+                <th>Sitio Web</th>
+                <th>Nacionalidad</th>
+                <th>Fundacion</th>
+                <th>Entrenador</th>
+                <th>Capacidad</th>
+                <th>Valor</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-teams>
+            <tr>
+                <td>{{ teams.id }}</td>
+                <td>{{ teams.nombre }}</td>
+                <td>{{ teams.estadio }}</td>
+                <td>{{ teams.sitioWeb }}</td>
+                <td>{{ teams.nacionalidad }}</td>
+                <td>{{ teams.fundacion }}</td>
+                <td>{{ teams.entrenador }}</td>
+                <td>{{ teams.capacidad }}</td>
+                <td>{{ teams.valor }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+<div class="teams__pagination flex flex-wrap gap-2 justify-content-center mt-8">
+  <p-button *ngFor="let page of totalPages"
+    [disabled]="(page - 1) === currentPage"
+    (onClick)="goToPage(page - 1)">
+      {{ page }}
+  </p-button>
+</div>
+</main>

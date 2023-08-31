@@ -1,0 +1,28 @@
+@use '../../../globales/variables.scss' as v;
+@use '../../../globales/mixins.scss' as m;
+
+
+.nav {
+
+  &-phone {
+
+    &__title {
+      color: v.$colorPrimario;
+      text-transform: uppercase;
+    }
+
+    &__item {
+      cursor: pointer;
+      margin-top: 1rem;
+      padding: .5rem;
+
+      list-style: none;
+      color: v.$colorNegro;
+
+      &:hover {
+        color: v.$colorPrimario;
+        font-weight: 700;
+      }
+    }
+  }
+}

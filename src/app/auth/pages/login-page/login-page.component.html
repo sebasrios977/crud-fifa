@@ -1,0 +1,13 @@
+<div class="col-5 h-screen w-screen flex align-items-center justify-content-center">
+  <form [formGroup]="myForm" (ngSubmit)="login()" class="p-fluid">
+      <div class="field">
+          <label for="username">Usuario</label>
+          <input formControlName="Usuario" pInputText id="username" type="text" />
+      </div>
+      <div class="field">
+          <label for="password">Contraseña</label>
+          <input formControlName="Password" pInputText id="password" type="password" />
+      </div>
+      <p-button type="submit" label="Login"></p-button>
+  </form>
+</div>

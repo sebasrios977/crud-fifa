@@ -1,0 +1,7 @@
+@use 'variables' as v;
+
+@mixin mq($display) {
+  @media (min-width: $display) {
+    @content;
+  }
+}

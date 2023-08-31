@@ -1,0 +1,9 @@
+<header class="header p-5">
+  <div class="header__grid flex align-items-center justify-content-between">
+    <img class="header__logo w-8rem h-full cursor-pointer" routerLink="teams" src="./assets/FIFA.png" alt="fifa logo">
+    <app-nav-bar />
+  </div>
+  <p-button *ngIf="!isLogged" (click)="login()" class="flex justify-content-end mt-4" label="Login"></p-button>
+  <p-button *ngIf="isLogged" (click)="logout()" class="flex justify-content-end mt-4" label="Logout"></p-button>
+</header>
+<router-outlet />

@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: 'Philosopher', sans-serif;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
