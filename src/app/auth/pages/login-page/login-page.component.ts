@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 export class LoginPageComponent {
 
   public myForm: FormGroup = this.fb.group({
-    Usuario:    ['cualquiera', [ Validators.required ]],
-    Password: ['cualquiera', [ Validators.required ]],
+    Usuario:    ['', [ Validators.required ]],
+    Password: ['', [ Validators.required ]],
   });
 
   constructor(private fb: FormBuilder,
@@ -21,6 +21,7 @@ export class LoginPageComponent {
 
 
   login() {
+    if(!this.myForm.valid) return;
     this.authService.login(this.myForm)
     .subscribe();
     if(this.authService.isLogged) {

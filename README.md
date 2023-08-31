@@ -6,22 +6,21 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Descargar node_modules
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Con la intencion de reducir el tamaño del proyecto para enviarlo por correo electrónico como .zip, se optó por eliminar la carpeta de node_modules.
+Debe hacerse el npm i.
 
-## Build
+## Funcionamiento de la pagina web.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. La pagina web inicia en la muestra de todos los equipos de manera publica.
 
-## Running unit tests
+2. Se puede ingresar a la pagina de busqueda sin iniciar sesion.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Para eliminar o actualizar un registro, se debe de hacer desde la pagina de busqueda. Pero para poder hacer estas acciones, se debe haber iniciado sesión.
 
-## Running end-to-end tests
+4. La pagina de crear equipos, se debe acceder de manera privada, o sea se debe iniciar sesion.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+5. Para iniciar sesion, entendí que se debe poner cualquier caracter o cualquier texto, pues asi lo hice.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+6. 
