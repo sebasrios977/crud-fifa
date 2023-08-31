@@ -23,4 +23,4 @@ Debe hacerse el npm i.
 
 5. Para iniciar sesion, entendí que se debe poner cualquier caracter o cualquier texto, pues asi lo hice.
 
-6. 
+6. Tuve un problema de CORS al momento de hacer /login y /logout, pero igualmente la app funciona correctamente.

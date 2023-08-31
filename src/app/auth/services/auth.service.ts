@@ -12,7 +12,7 @@ export class AuthService {
   public currentUser?: FormGroup;
   private baseUrl: string = 'https://wo-fifa.azurewebsites.net';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   login(user: FormGroup): Observable<boolean> {
     this.isLogged = true;

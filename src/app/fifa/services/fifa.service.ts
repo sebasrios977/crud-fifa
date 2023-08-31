@@ -12,7 +12,7 @@ export class FifaService {
 
   private baseUrl: string = 'https://wo-fifa.azurewebsites.net';
 
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   getAllTeams(pagination: number, quantity: number = 100): Observable<Data> {
     const url = `${this.baseUrl}/equipos/listar/${pagination}/${quantity}`;
